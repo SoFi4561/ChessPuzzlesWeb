@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>Log in with your account</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+    <form class="form-signin mt-xl-5" method="POST" action="/login">
+        <h2 class="form-signin-heading">Sign in</h2>
+        <p>
+            <label for="username" class="sr-only">Username</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Username" required=""
+                   autofocus="">
+        </p>
+        <p>
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password"
+                   required="">
+        </p>
+
+        <!--        <div th:text="${error}" class="text-danger"></div>-->
+
+        <button id="submit" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+
+    </form>
+    <a href="/register" class="btn btn-block btn-light">Register here</a>
+    <a href="/guestPage" class="btn btn-block btn-light">Guest</a>
+    <!--    <form  action="/guestPage" method="GET">-->
+    <!--        <button type="submit" class="btn btn-danger">Guest</button></form>-->
+
+</div>
+
+</body>
+</html>

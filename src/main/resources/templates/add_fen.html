@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New FEN</title>
+    <link crossorigin="anonymous"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1> FEN Chess </h1>
+    <hr>
+    <h2> Save FEN Chess </h2>
+
+    <form action="#" th:action="@{/saveFen}" th:object="${fen}" method="POST">
+        <p th:text="${error}" class="text-danger"></p>
+        <input type="text" th:field="*{fen}"
+               placeholder="Enter Valid FEN" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{description}"
+               placeholder="Enter a Description" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{maxPoints}"
+               placeholder="Enter Points" class="form-control mb-4 col-4">
+
+
+        <input type="text" th:field="*{solution}"
+               placeholder="Enter a Solution" class="form-control mb-4 col-4">
+
+        <button type="submit" class="btn btn-info col-2"> Save FEN</button>
+    </form>
+
+</div>
+
+</body>
+</html>

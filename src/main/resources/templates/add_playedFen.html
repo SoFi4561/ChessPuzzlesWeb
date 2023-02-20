@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+  <title>AddPlayedFen</title>
+  <link crossorigin="anonymous"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <hr>
+  <h2> Save PlayedFen </h2>
+
+  <form action="#" th:action="@{/savePlayedFen}" th:object="${playedFen}" method="POST">
+    <p th:text="${error}" class="text-danger"></p>
+    <input type="text" th:field="*{actualPoints}"
+           placeholder="Enter points" class="form-control mb-4 col-4">
+    <input type="text" th:field="*{playedSolution}"
+           placeholder="Enter solution" class="form-control mb-4 col-4">
+    <input type="text" th:field="*{fenId}"
+           placeholder="Enter fenId" class="form-control mb-4 col-4">
+    <input type="text" th:field="*{playerId}"
+           placeholder="Enter playerId" class="form-control mb-4 col-4">
+    <input type="text" th:field="*{tournamentId}"
+           placeholder="Enter tournamentId" class="form-control mb-4 col-4">
+
+
+
+
+    <button action="/viewPlayedFen" type="submit" class="btn btn-info col-2"> Save PlayedFen</button>
+  </form>
+
+</div>
+
+</body>
+</html>

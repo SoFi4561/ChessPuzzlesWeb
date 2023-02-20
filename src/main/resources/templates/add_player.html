@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>AddPlayer</title>
+  <link crossorigin="anonymous"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <hr>
+  <h2> Save Player </h2>
+
+  <form action="#" th:action="@{/savePlayers}" th:object="${player}" method="POST">
+    <p th:text="${error}" class="text-danger"></p>
+    <input type="text" th:field="*{username}"
+           placeholder="Enter Valid Username" class="form-control mb-4 col-4">
+
+
+
+    <button action="/viewPlayers" type="submit" class="btn btn-info col-2"> Save Player</button>
+  </form>
+
+</div>
+
+</body>
+</html>
